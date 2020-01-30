@@ -22,6 +22,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     let searchController = UISearchController(searchResultsController: nil)
     var gerenciadorDeResultados: NSFetchedResultsController<Aluno>?
     var alunoViewController: AlunoViewController?
+    var mensagem = Mensagem()
     
     // MARK: - View Lifecycle
 
@@ -61,6 +62,29 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         }
         
     }
+    
+    @objc func abrirActionSheet(_ longPress: UILongPressGestureRecognizer){
+        if longPress.state == .began{
+            guard let alunoSelecionado = gerenciadorDeResultados?.fetchedObjects?[(longPress.view?.tag)!] else { return }
+            let menu = MenuOpcoesAlunos().configuraMenuDeOpcoesDoAluno { (opcao) in
+                switch opcao{
+                case .sms:
+                    if let componeteMensagem = self.mensagem.configuraSMS(alunoSelecionado){
+                        componeteMensagem.messageComposeDelegate = self.mensagem
+                        self.present(componeteMensagem, animated: true, completion: nil)
+                    }
+                    break
+                case .ligacao:
+                    guard let numeroDoAluno = alunoSelecionado.telefone else { return }
+                    if let url = URL(string: "tel://\(numeroDoAluno)"), UIApplication.shared.canOpenURL(url){
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                    break
+                }
+            }
+            self.present(menu, animated: true, completion: nil)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -72,12 +96,17 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula-aluno", for: indexPath) as! HomeTableViewCell
         
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(abrirActionSheet(_:)))
+        
         guard let aluno = gerenciadorDeResultados?.fetchedObjects![ indexPath.row ] else { return cell}
         
         cell.configuraCelula(aluno)
+        cell.addGestureRecognizer(longPress)
         
         return cell
     }
+    
+    
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85

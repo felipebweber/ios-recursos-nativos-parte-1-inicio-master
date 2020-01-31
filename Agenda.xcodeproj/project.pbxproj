@@ -17,6 +17,7 @@
 		03AA176D1FC8515A003CB2B8 /* AlunoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA176C1FC8515A003CB2B8 /* AlunoViewController.swift */; };
 		555281BA23E35DAB00BA635E /* MenuOpcoesAlunos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555281B923E35DAB00BA635E /* MenuOpcoesAlunos.swift */; };
 		555281BC23E361B700BA635E /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555281BB23E361B700BA635E /* Mensagem.swift */; };
+		5569018223E4EEBD0073E67F /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569018123E4EEBD0073E67F /* MapaViewController.swift */; };
 		558A82F623E472E70084A8A9 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A82F523E472E70084A8A9 /* Localizacao.swift */; };
 		55C2875323E1C1960080904F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2875223E1C1960080904F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		03AA176C1FC8515A003CB2B8 /* AlunoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoViewController.swift; sourceTree = "<group>"; };
 		555281B923E35DAB00BA635E /* MenuOpcoesAlunos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesAlunos.swift; sourceTree = "<group>"; };
 		555281BB23E361B700BA635E /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
+		5569018123E4EEBD0073E67F /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		558A82F523E472E70084A8A9 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
 		55C2875223E1C1960080904F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 				03AA174D1FC84154003CB2B8 /* AppDelegate.swift */,
 				03AA17621FC8433E003CB2B8 /* Home */,
 				03AA17691FC84A2D003CB2B8 /* Alunos */,
+				5569017F23E4EE890073E67F /* Mapa */,
 				55C2875123E1C15E0080904F /* Componetes */,
 				03AA17511FC84154003CB2B8 /* Main.storyboard */,
 				03AA17571FC84154003CB2B8 /* Assets.xcassets */,
@@ -128,6 +131,22 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5569017F23E4EE890073E67F /* Mapa */ = {
+			isa = PBXGroup;
+			children = (
+				5569018023E4EE9C0073E67F /* Controller */,
+			);
+			path = Mapa;
+			sourceTree = "<group>";
+		};
+		5569018023E4EE9C0073E67F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5569018123E4EEBD0073E67F /* MapaViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		55C2875123E1C15E0080904F /* Componetes */ = {
@@ -221,6 +240,7 @@
 				03AA17681FC843B1003CB2B8 /* HomeTableViewCell.swift in Sources */,
 				555281BA23E35DAB00BA635E /* MenuOpcoesAlunos.swift in Sources */,
 				555281BC23E361B700BA635E /* Mensagem.swift in Sources */,
+				5569018223E4EEBD0073E67F /* MapaViewController.swift in Sources */,
 				03AA174E1FC84154003CB2B8 /* AppDelegate.swift in Sources */,
 				558A82F623E472E70084A8A9 /* Localizacao.swift in Sources */,
 			);

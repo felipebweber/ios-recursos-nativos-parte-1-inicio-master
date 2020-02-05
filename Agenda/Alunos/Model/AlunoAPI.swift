@@ -11,6 +11,28 @@ import Alamofire
 
 class AlunoAPI: NSObject {
     
+    //MARK: - GET
+    func recuperaAlunos(){
+        Alamofire.request("http://localhost:8080/api/aluno", method: .get).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                if let resposta = response.result.value as? Dictionary<String, Any>{
+                    guard let listaDeAlunos = resposta["alunos"] as? Array<Dictionary<String, Any>>  else { return }
+                    for dicionarioDeAluno in listaDeAlunos{
+                        AlunoDAO().salvaAluno(dicionarioDeAluno: dicionarioDeAluno)
+                    }
+                    
+                }
+                break
+            case .failure:
+                print(response.error)
+                break
+            }
+        }
+    }
+    
+    
+    //MARK: - PUT
     func salvaAlunosNoServico(paramentros: Array<Dictionary<String, String>>){
         guard let url = URL(string: "http://localhost:8080/api/aluno/lista") else { return }
         var requisicao = URLRequest(url: url)

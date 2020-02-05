@@ -11,7 +11,7 @@ import Alamofire
 
 class AlunoAPI: NSObject {
     
-    func salvaAlunosNoServido(paramentros: Array<Dictionary<String, String>>){
+    func salvaAlunosNoServico(paramentros: Array<Dictionary<String, String>>){
         guard let url = URL(string: "http://localhost:8080/api/aluno/lista") else { return }
         var requisicao = URLRequest(url: url)
         requisicao.httpMethod = "PUT"

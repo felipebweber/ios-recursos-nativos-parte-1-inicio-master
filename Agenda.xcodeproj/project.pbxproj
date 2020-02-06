@@ -27,6 +27,7 @@
 		556DE61D23EC618E006BAF82 /* LigacaoTelefonica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556DE61C23EC618E006BAF82 /* LigacaoTelefonica.swift */; };
 		556DE61F23EC63D2006BAF82 /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556DE61E23EC63D2006BAF82 /* Safari.swift */; };
 		556DE62123EC66DE006BAF82 /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556DE62023EC66DE006BAF82 /* Filtro.swift */; };
+		556DE62323ECB566006BAF82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 556DE62223ECB566006BAF82 /* GoogleService-Info.plist */; };
 		558A82F623E472E70084A8A9 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A82F523E472E70084A8A9 /* Localizacao.swift */; };
 		55C2875323E1C1960080904F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2875223E1C1960080904F /* ImagePicker.swift */; };
 		55D8135D23EAF62000B1C33B /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8135C23EAF62000B1C33B /* Repositorio.swift */; };
@@ -58,6 +59,8 @@
 		556DE61C23EC618E006BAF82 /* LigacaoTelefonica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigacaoTelefonica.swift; sourceTree = "<group>"; };
 		556DE61E23EC63D2006BAF82 /* Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		556DE62023EC66DE006BAF82 /* Filtro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
+		556DE62223ECB566006BAF82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		556DE62423ECB7C0006BAF82 /* Agenda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Agenda.entitlements; sourceTree = "<group>"; };
 		558A82F523E472E70084A8A9 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
 		55C2875223E1C1960080904F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		55D8135C23EAF62000B1C33B /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		03AA174C1FC84154003CB2B8 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				556DE62423ECB7C0006BAF82 /* Agenda.entitlements */,
 				03AA174D1FC84154003CB2B8 /* AppDelegate.swift */,
 				03AA17621FC8433E003CB2B8 /* Home */,
 				03AA17691FC84A2D003CB2B8 /* Alunos */,
@@ -109,6 +113,7 @@
 				03AA17571FC84154003CB2B8 /* Assets.xcassets */,
 				03AA17591FC84154003CB2B8 /* LaunchScreen.storyboard */,
 				03AA175C1FC84154003CB2B8 /* Info.plist */,
+				556DE62223ECB566006BAF82 /* GoogleService-Info.plist */,
 				03AA17541FC84154003CB2B8 /* Agenda.xcdatamodeld */,
 			);
 			path = Agenda;
@@ -305,6 +310,7 @@
 			files = (
 				03AA175B1FC84154003CB2B8 /* LaunchScreen.storyboard in Resources */,
 				5530599923E9A26A00FF1437 /* icon_caelum.png in Resources */,
+				556DE62323ECB566006BAF82 /* GoogleService-Info.plist in Resources */,
 				03AA17581FC84154003CB2B8 /* Assets.xcassets in Resources */,
 				03AA17531FC84154003CB2B8 /* Main.storyboard in Resources */,
 			);
@@ -343,10 +349,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Agenda/Pods-Agenda-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -521,11 +535,12 @@
 			baseConfigurationReference = A0954FB005BA5DE300D5B9CF /* Pods-Agenda.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Agenda/Agenda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF4G5DZZMF;
+				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = Agenda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = apps.Agenda;
+				PRODUCT_BUNDLE_IDENTIFIER = apps.Agenda.alura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -537,12 +552,15 @@
 			baseConfigurationReference = EDC81C7E6FB48672AE049784 /* Pods-Agenda.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF4G5DZZMF;
+				CODE_SIGN_ENTITLEMENTS = Agenda/Agenda.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Agenda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apps.Agenda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

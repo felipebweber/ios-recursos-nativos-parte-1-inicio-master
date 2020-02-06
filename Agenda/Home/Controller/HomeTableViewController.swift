@@ -129,23 +129,17 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        AutenticacaoLocal().autorizaUsuario { (autenticado) in
-            if autenticado {
-                DispatchQueue.main.async {
-                    if editingStyle == .delete {
-                    // Delete the row from the data source
-//                    guard let alunoSelecionado = self.gerenciadorDeResultados?.fetchedObjects![indexPath.row] else { return }
-//                    self.contexto.delete(alunoSelecionado)
-//
-//                    do{
-//                        try self.contexto.save()
-//                    }catch{
-//                        print(error.localizedDescription)
-//                    }
+        print("Antes da autenticacao")
+        if editingStyle == .delete{
+            AutenticacaoLocal().autorizaUsuario { (autenticado) in
+                if autenticado {
+                    DispatchQueue.main.async {
+                        let alunoSelecionado = self.alunos[indexPath.row]
+                        Repositorio().deletaAluno(aluno: alunoSelecionado)
+                        self.alunos.remove(at: indexPath.row)
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
                 }
-                }
-            }else if editingStyle == .insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }
         }
         

@@ -17,8 +17,7 @@ class AutenticacaoLocal: NSObject {
         let contexto = LAContext()
         if contexto.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error){
             contexto.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "é necessário autenticação para apagar um aluno") { (resposta, error) in
-                
-                
+                completion(resposta)
             }
         }
     }

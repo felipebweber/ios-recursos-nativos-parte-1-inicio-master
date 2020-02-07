@@ -11,8 +11,9 @@ import CoreData
 import UserNotifications
 import Firebase
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     enum TipoDeShortcut: String {
         case cadastrarAluno = "CadastrarAluno"
@@ -26,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let autorizacao: UNAuthorizationOptions = [.badge, .alert, .sound]
         
         UNUserNotificationCenter.current().requestAuthorization(options: autorizacao) { (_, _) in
-            // configurar o cloud messaging
+            Messaging.messaging().delegate = self
+            // para receber notificacao de alteracao de dados no servidor eh preciso criar um canal direto
+            Messaging.messaging().shouldEstablishDirectChannel = true
         }
         
         application.registerForRemoteNotifications()
@@ -47,6 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        Firebase().enviaTokenParaServidor(token: fcmToken)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

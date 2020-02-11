@@ -11,7 +11,7 @@ import UIKit
 class Repositorio: NSObject {
 
     func recuperaAlunos(completion: @escaping(_ listaDeAlunos: Array<Aluno>) -> Void){
-        var alunos = AlunoDAO().recuperaAlunos().filter({ $0.desativado = false})
+        var alunos = AlunoDAO().recuperaAlunos().filter({ $0.desativado == false})
         if alunos.count == 0{
             AlunoAPI().recuperaAlunos {
                 alunos = AlunoDAO().recuperaAlunos()

@@ -31,6 +31,7 @@
 		556DE62123EC66DE006BAF82 /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556DE62023EC66DE006BAF82 /* Filtro.swift */; };
 		556DE62323ECB566006BAF82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 556DE62223ECB566006BAF82 /* GoogleService-Info.plist */; };
 		558A82F623E472E70084A8A9 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558A82F523E472E70084A8A9 /* Localizacao.swift */; };
+		55A8054423F33078008C9B82 /* AlunoUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8054323F33078008C9B82 /* AlunoUserDefaults.swift */; };
 		55C2875323E1C1960080904F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2875223E1C1960080904F /* ImagePicker.swift */; };
 		55D8135D23EAF62000B1C33B /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8135C23EAF62000B1C33B /* Repositorio.swift */; };
 		55D8135F23EAF6E700B1C33B /* AlunoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8135E23EAF6E600B1C33B /* AlunoDAO.swift */; };
@@ -66,6 +67,7 @@
 		556DE62223ECB566006BAF82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		556DE62423ECB7C0006BAF82 /* Agenda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Agenda.entitlements; sourceTree = "<group>"; };
 		558A82F523E472E70084A8A9 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
+		55A8054323F33078008C9B82 /* AlunoUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoUserDefaults.swift; sourceTree = "<group>"; };
 		55C2875223E1C1960080904F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		55D8135C23EAF62000B1C33B /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
 		55D8135E23EAF6E600B1C33B /* AlunoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoDAO.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				555165AA23EA38E700AD44C3 /* AlunoAPI.swift */,
 				55D8135C23EAF62000B1C33B /* Repositorio.swift */,
 				55D8135E23EAF6E600B1C33B /* AlunoDAO.swift */,
+				55A8054323F33078008C9B82 /* AlunoUserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				556DE61D23EC618E006BAF82 /* LigacaoTelefonica.swift in Sources */,
 				55D8135D23EAF62000B1C33B /* Repositorio.swift in Sources */,
 				5569018223E4EEBD0073E67F /* MapaViewController.swift in Sources */,
+				55A8054423F33078008C9B82 /* AlunoUserDefaults.swift in Sources */,
 				03AA174E1FC84154003CB2B8 /* AppDelegate.swift in Sources */,
 				558A82F623E472E70084A8A9 /* Localizacao.swift in Sources */,
 				5530599123E991F900FF1437 /* AutenticacaoLocal.swift in Sources */,

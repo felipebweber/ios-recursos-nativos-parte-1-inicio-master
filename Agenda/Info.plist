@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UrlPadrao</key>
-	<string>http://192.168.1.29:8080/</string>
+	<string>http://localhost:8080/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

@@ -52,4 +52,11 @@ class Repositorio: NSObject {
         }
         AlunoAPI().salvaAlunosNoServico(paramentros: listaDeParamentros)
     }
+    
+    
+    func recuperaUltimosAlunos(_ versao:String, completion:@escaping() -> Void){
+        AlunoAPI().recuperaUltimosAlunos(versao) {
+            completion()
+        }
+    }
 }
